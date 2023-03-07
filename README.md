@@ -1,12 +1,13 @@
 # Minesweeper AI
 Minesweeper AI solver that interfaces with minesweeperonline.com with OpenCV
-Also works with the original winmine.exe that you can download [here](https://archive.org/download/BestOfWindowsEntertainmentPack64Bit)
+Also works with the original winmine.exe (download [here](https://archive.org/download/BestOfWindowsEntertainmentPack64Bit))
 
 
 ## Features
  - Fast screenshot with mss
  - Fast tile recognition with histograms
  - Brute force search as [Minesweeper is NP-complete](https://web.archive.org/web/20121018141147/http://www.claymath.org/Popular_Lectures/Minesweeper/)
+ - Solve based on Minesweeper as a [Constraint Satisfaction Problem](https://en.wikipedia.org/wiki/Constraint_satisfaction_problem) with [coupled subsets](http://www.cs.toronto.edu/~cvs/minesweeper/minesweeper.pdf)
 
 
 ## Algorithm
@@ -26,26 +27,34 @@ Also works with the original winmine.exe that you can download [here](https://ar
         - Create a 'no more than' subgroup
         - Create an 'at least' subgroup
         - Perform safe and mine checks between each group and subgroup
+ - Constraint Satisfaction Problem (CSP) search
+    - Couple constraints together into a subset if they share a common variable
+    - Solve for solutions to the coupled subset
+    - Eliminate solutions with more mines than remaining mines
+    - Calculate probability of a tile in subset being mine-free (based on all its possible solutions)
+        - Calculate no of possible combinations of bombs with remaining tiles given a solution (use this as weight)
+    - Calculate probability of an unconstrained tile being mine-free
+        - Position of unconstrained tile in the order of corner, edge then internal tile
 
 ## Potential improvements
  - Neural network for tile classification
- - Solve based on Minesweeper as a [Constraint Satisfaction Problem](https://en.wikipedia.org/wiki/Constraint_satisfaction_problem) with [coupled subsets](http://www.cs.toronto.edu/~cvs/minesweeper/minesweeper.pdf)
 
  ### Dependencies
  - pynput
  - pyautogui
  - opencv-python
- - pillow
  - [mss](https://pypi.org/project/mss/1.0.2/)
  - numpy
- - [tesseract](https://github.com/UB-Mannheim/tesseract/wiki)
+ - keyboard
 
 ### How to use
 1. Modify `INITIAL_MINES` in `main.py`
 1. Run `main.py`
 2. Left click on upper left hand corner of board
 3. Left click on lower right hand corner of board
-Note: press 'b' to terminate midway through loop
+Note: Press 'b' to terminate midway through loop
+
+PS. modify `main.py` if you want it to remember the position of the board
 
  ### References
  - [Color appoximation with histograms](https://developershell.net/solving-minesweeper-part-9-color-separation/)

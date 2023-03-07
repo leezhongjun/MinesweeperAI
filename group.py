@@ -11,6 +11,11 @@ class Group():
         self.coords = coords
         self.mines = mines
 
+    def __eq__(self, other):
+        if isinstance(other, Group):
+            return self.coords == other.coords and self.mines == other.mines
+        return False
+
     def __str__(self) -> str:
         return f"Group: {self.coords}, {self.mines}"
 
