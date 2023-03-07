@@ -1,8 +1,10 @@
+### Holds Global variables for the game ###
+
 board = None
 width = 0
 height = 0
 inter = None
-has_won = False
+has_won = True
 is_done = False
 
 UNOPENED = 9

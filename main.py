@@ -12,6 +12,7 @@ def main():
     board.remaining_mines = INITIAL_MINES
     board.inter = Interface(coords, x_s, y_s)
     board.inter.initial_init(do_get_frame_coords=True, do_get_img_coords=True)
+    print(board.has_won, board.is_done)
     s = Solver()
     s.solve()
 

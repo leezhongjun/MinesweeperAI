@@ -40,7 +40,9 @@ Also works with the original winmine.exe (download [here](https://archive.org/do
         - Position of unconstrained tile in the order of corner, edge then internal tile
 
 ## Potential improvements
- - Neural network for tile classification
+ - [Neural network](https://en.wikipedia.org/wiki/Neural_network) for tile classification
+ - [Multithreading](https://en.wikipedia.org/wiki/Multithreading_(computer_architecture)) for faster solve
+ - Simulate locally and run benchmark
 
  ### Dependencies
  - pynput
