@@ -2,6 +2,8 @@
 Minesweeper AI solver that interfaces with minesweeperonline.com with OpenCV
 Also works with the original winmine.exe (download [here](https://archive.org/download/BestOfWindowsEntertainmentPack64Bit))
 
+## Demo
+![minesweeper](https://user-images.githubusercontent.com/80515759/223396465-f083c093-dbbd-4cff-9a4c-a9b791040ebc.gif)
 
 ## Features
  - Fast screenshot with mss
