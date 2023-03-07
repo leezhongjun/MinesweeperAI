@@ -1,5 +1,6 @@
 # Minesweeper AI
 Minesweeper AI solver that interfaces with minesweeperonline.com with OpenCV
+
 Also works with the original winmine.exe (download [here](https://archive.org/download/BestOfWindowsEntertainmentPack64Bit))
 
 ## Demo
@@ -54,9 +55,10 @@ Also works with the original winmine.exe (download [here](https://archive.org/do
 1. Run `main.py`
 2. Left click on upper left hand corner of board
 3. Left click on lower right hand corner of board
-Note: Press 'b' to terminate midway through loop
 
-PS. modify `main.py` if you want it to remember the position of the board
+Side notes: 
+ - Press 'b' to terminate midway through loop
+ - Modify `main.py` if you want it to remember the position of the board
 
  ### References
  - [Color appoximation with histograms](https://developershell.net/solving-minesweeper-part-9-color-separation/)
