@@ -45,6 +45,7 @@ Also works with the original winmine.exe that you can download [here](https://ar
 1. Run `main.py`
 2. Left click on upper left hand corner of board
 3. Left click on lower right hand corner of board
+Note: press 'b' to terminate midway through loop
 
  ### References
  - [Color appoximation with histograms](https://developershell.net/solving-minesweeper-part-9-color-separation/)
