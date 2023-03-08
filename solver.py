@@ -301,8 +301,8 @@ class Solver():
                 # Compare probabilities
                 if c_prob < uncon_prob:
                     board.inter.click(ls[0][0][0], ls[0][0][1])
-                else:
 
+                else:
                     # Get unconstrained tile
                     tile = self.get_unconstrained_tile()
                     if tile is None:
