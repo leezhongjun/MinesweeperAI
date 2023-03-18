@@ -6,12 +6,21 @@ Also works with the original winmine.exe (download [here](https://archive.org/do
 ## Demo
 ![minesweeper](https://user-images.githubusercontent.com/80515759/223396465-f083c093-dbbd-4cff-9a4c-a9b791040ebc.gif)
 
+## Results
+For 101 runs:
+| Solver | Expert solve rate |
+| --- | --- |
+| OH (Buffet et al. 2013) | 38.7 % |
+| **This solver** | **37.6 %** |
+| cSimEnuLoClf (Legendre et al. 2012) |  37.5 % |
+| CSP (Studholme 2000) | 33.9 % |
+| CSCSP (Becerra 2015) | 32.9 % |
+
 ## Features
  - Fast screenshot with mss
  - Fast tile recognition with histograms
  - Brute force search as [Minesweeper is NP-complete](https://web.archive.org/web/20121018141147/http://www.claymath.org/Popular_Lectures/Minesweeper/)
  - Solve based on Minesweeper as a [Constraint Satisfaction Problem](https://en.wikipedia.org/wiki/Constraint_satisfaction_problem) with [coupled subsets](http://www.cs.toronto.edu/~cvs/minesweeper/minesweeper.pdf)
-
 
 ## Algorithm
  - First tile clicked is [corner tile](https://minesweepergame.com/math/exploring-efficient-strategies-for-minesweeper-2017.pdf)
@@ -42,15 +51,7 @@ Also works with the original winmine.exe (download [here](https://archive.org/do
 ## Potential improvements
  - [Neural network](https://en.wikipedia.org/wiki/Neural_network) for tile classification
  - [Multithreading](https://en.wikipedia.org/wiki/Multithreading_(computer_architecture)) for faster solve
- - Simulate locally and run benchmark
-
- ### Dependencies
- - pynput
- - pyautogui
- - opencv-python
- - [mss](https://pypi.org/project/mss/1.0.2/)
- - numpy
- - keyboard
+ - Simulate locally
 
 ### How to use
 1. Modify `INITIAL_MINES` in `main.py`
@@ -61,6 +62,16 @@ Also works with the original winmine.exe (download [here](https://archive.org/do
 Side notes: 
  - Press 'b' to terminate midway through loop
  - Modify `main.py` if you want it to remember the position of the board
+ - Modify `main.py` and set `benchmark_runs = x` for `x` runs of the benchmark
+
+ 
+ ### Dependencies
+ - pynput
+ - pyautogui
+ - opencv-python
+ - [mss](https://pypi.org/project/mss/1.0.2/)
+ - numpy
+ - keyboard
 
  ### References
  - [Color appoximation with histograms](https://developershell.net/solving-minesweeper-part-9-color-separation/)
