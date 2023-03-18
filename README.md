@@ -8,13 +8,13 @@ Also works with the original winmine.exe (download [here](https://archive.org/do
 
 ## Results
 For 101 runs:
-| Solver | Expert solve rate |
-| --- | --- |
-| OH (Buffet et al. 2013) | 38.7 % |
-| **This solver** | **37.6 %** |
-| cSimEnuLoClf (Legendre et al. 2012) |  37.5 % |
-| CSP (Studholme 2000) | 33.9 % |
-| CSCSP (Becerra 2015) | 32.9 % |
+| Solver | Deterministic | Expert solve rate |
+| --- | --- | --- |
+| OH (Buffet et al. 2013) | No | 38.7 % |
+| <ins>**This solver**</ins> | Yes | <ins>**37.6 %**</ins> |
+| cSimEnuLoClf (Legendre et al. 2012) | Yes | 37.5 % |
+| CSP (Studholme 2000) | Yes | 33.9 % |
+| CSCSP (Becerra 2015) | Yes | 32.9 % |
 
 ## Features
  - Fast screenshot with mss
