@@ -191,7 +191,10 @@ class Solver():
         '''
         
         # Select solution set based on number of groups in coupled group
-        sols = self.solution_sets[len(coupled_groups_list)]
+        if len(coupled_groups_list) < len(self.solution_sets):
+            sols = self.solution_sets[len(coupled_groups_list)]
+        else:
+            sols = list(itertools.product([0, 1], repeat=len(coupled_groups_list)))
         res = []
         comb_ls =[]
 
@@ -286,7 +289,7 @@ class Solver():
             return
         
         else:
-            print('Probabilities:', prob_d) # Debug
+            # print('Probabilities:', prob_d) # Debug
             # Sort by least probability
             ls = [(k, v) for k, v in sorted(prob_d.items(), key=lambda item: item[1])]
             
@@ -387,10 +390,10 @@ class Solver():
             if self.simple_solve():
                 continue
             if self.group_solve():
-                print('Group solve')
+                # print('Group solve')
                 continue
             if self.subgroup_solve():
-                print('Subgroup solve')
+                # print('Subgroup solve')
                 continue
             
             # Create coupled groups
@@ -398,13 +401,13 @@ class Solver():
             
             # CSP solve
             if self.coupled_groups:
-                print('CSP solve')
+                # print('CSP solve')
                 self.solve_coupled_groups()
             else:
                 # It's a 50/50
                 try:
                     board.inter.click(self.groups[0].coords[0][0], self.groups[0].coords[0][1])
-                    print('50/50 solve')
+                    # print('50/50 solve')
                 except:
                     for i in range(board.width):
                         for j in range(board.height):

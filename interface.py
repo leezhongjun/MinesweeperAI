@@ -1,5 +1,5 @@
-from pynput.mouse import Listener, Button
-import pyautogui
+from pynput.mouse import Listener, Button, Controller
+import time
 import cv2
 import mss
 import numpy as np
@@ -26,6 +26,7 @@ class Interface():
         self.height = 0
         self.folder = 'histogram_data'
         self.hists = []
+        self.mouse = Controller()
 
 
     def get_frame_coords(self):
@@ -221,8 +222,10 @@ class Interface():
         '''
 
         if board.board[y][x] == UNOPENED:
-            pyautogui.click(self.x_s[x] + self.coords[0] + self.offset, \
+            self.mouse.position = (self.x_s[x] + self.coords[0] + self.offset, \
                             self.coords[1] +self. y_s[y] + self.offset)
+            self.mouse.click(Button.left, 1)
+            time.sleep(0.025)
             
             # Update board
             self.update_board()
@@ -234,8 +237,9 @@ class Interface():
         '''
 
         if board.board[y][x] == UNOPENED:
-            pyautogui.click(self.x_s[x] + self.coords[0] + self.offset, \
-                            self.coords[1] + self.y_s[y] + self.offset, button='right')
+            self.mouse.position = (self.x_s[x] + self.coords[0] + self.offset, \
+                            self.coords[1] +self. y_s[y] + self.offset)
+            self.mouse.click(Button.right, 1)
             
             # Update board
             board.board[y][x] = FLAG

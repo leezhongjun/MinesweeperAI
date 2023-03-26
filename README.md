@@ -7,7 +7,6 @@ Also works with the original winmine.exe (download [here](https://archive.org/do
 ![minesweeper](https://user-images.githubusercontent.com/80515759/223396465-f083c093-dbbd-4cff-9a4c-a9b791040ebc.gif)
 
 ## Results
-For 101 runs:
 | Solver | Deterministic | Expert solve rate |
 | --- | --- | --- |
 | OH (Buffet et al. 2013) | No | 38.7 % |
