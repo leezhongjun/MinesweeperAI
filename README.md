@@ -10,7 +10,7 @@ Also works with the original winmine.exe (download [here](https://archive.org/do
 | Solver | Deterministic | Expert solve rate |
 | --- | --- | --- |
 | OH (Buffet et al. 2013) | No | 38.7 % |
-| <ins>**This solver**</ins> | Yes | <ins>**37.6 %**</ins> |
+| <ins>**This solver**</ins> | Yes | <ins>**38.0 %**</ins> |
 | cSimEnuLoClf (Legendre et al. 2012) | Yes | 37.5 % |
 | CSP (Studholme 2000) | Yes | 33.9 % |
 | CSCSP (Becerra 2015) | Yes | 32.9 % |
